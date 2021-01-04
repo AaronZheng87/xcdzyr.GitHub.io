@@ -469,12 +469,15 @@
     };
 
     let trial2 = {
-        timeline: [plus1,feedback_trial],
+        timeline: [plus1,feedback_trial, {
+            type: "fullscreen",
+            fullscreen_mode: false
+        }],
         timeline_variables: test_stimuli,
         randomize_order: true,
         repetitions: 6
     };//正式实验
-
+    
     jsPsych.init({
         timeline: timeline,
         preload_images: ["img/P.bmp", "img/C.bmp", "img/Tra.bmp"],
