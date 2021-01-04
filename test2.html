@@ -370,6 +370,7 @@
         ],
         choices: ["m", "n"],
         canvas_height:900,
+        response_start_time: 1000,
         data: function () {
             let t = jsPsych.timelineVariable("stimulus", true);
             let w = jsPsych.timelineVariable("item", true);
@@ -472,7 +473,7 @@
         timeline: [plus1,feedback_trial],
         timeline_variables: test_stimuli,
         randomize_order: true,
-        repetitions: 1
+        repetitions: 6
     };//正式实验
     
     jsPsych.init({
