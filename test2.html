@@ -484,11 +484,6 @@
                 "<p>郑元瑞（Email: aaronzheng87@gmail.com） </p ></div>";
             document.exitFullscreen();
             jsPsych.data.get().localSave('csv', 'data.csv');
-           setTimeout(function () {
-                window.opener = null;
-                window.open('','_self');
-                window.close();
-            }, 2000);
         }
     })
     
