@@ -288,7 +288,7 @@
 
         }
     };
-    // timeline.push(experinumber, subjectnumber, number_of_experiment, sex, birth, education); // 信息收集
+   timeline.push(experinumber, subjectnumber, number_of_experiment, sex, birth, education); // 信息收集
 
 
     let instructions1 = {
@@ -346,6 +346,7 @@
                 line_width:5,
                 line_color: 'black', // You can use the HTML color name instead of the HEX color.
                 show_start_time: 500, // ms after the start of the trial
+                
             },
             {
                 obj_type: 'image',
@@ -353,7 +354,7 @@
                 startX: "center", // location of the cross's center in the canvas
                 startY: 350,
                 show_start_time: 1000, // ms after the start of the trial
-                // show_end_time: 1100,
+                show_end_time: 1100,
             },
             {
                 obj_type: 'text',
@@ -363,7 +364,7 @@
                 font: "50px 'Arial'",
                 text_color: 'black',
                 show_start_time: 1000, // ms after the start of the trial
-                // show_end_time: 1100
+                show_end_time: 1100
             }
         ],
         choices: ["m", "n"],
@@ -382,7 +383,7 @@
         on_finish: function (data) {
             data.correct = data.key === jsPsych.pluginAPI.convertKeyCodeToKeyCharacter(data.key_press);
         },
-        // trial_duration: 2200,
+        trial_duration: 2200,
         background_color: "grey"
     };
 
