@@ -483,9 +483,11 @@
                 "<p>如果您对实验结果感兴趣，可以发邮件与我联系。</p >" +
                 "<p>郑元瑞（Email: aaronzheng87@gmail.com） </p ></div>";
             jsPsych.data.get().localSave('csv', 'data.csv');
-            window.opener = null;//禁止某些浏览器的一些弹窗
-            window.open('','_self');
-            window.close()
+           setTimeout(function () {
+                window.opener = null;
+                window.open('','_self');
+                window.close();
+            }, 2000);
         }
     })
     
