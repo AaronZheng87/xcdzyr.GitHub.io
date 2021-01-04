@@ -63,6 +63,7 @@
 </style>
 </head>
 <body style="text-align:center;">
+    <div id="experment_show" style="height: 900px;"></div>
 </body>
 <script>
     let test_stimuli = [
@@ -481,8 +482,7 @@
                 "<p>郑元瑞（Email: aaronzheng87@gmail.com） </p ></div>";
             jsPsych.data.get().localSave('csv', 'data.csv');
         },
-        height: 900,
-        width: 1400
+        display_element: "experment_show"
     })
 </script>
 </html>
