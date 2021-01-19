@@ -66,706 +66,100 @@
 </body>
 <script>
     let img = ["img/C.bmp", "img/P.bmp", "img/Tra.bmp"];
-    let word = ["好人", "坏人"];
+    let word = ["好人", "坏人", "常人"];
 
+    let b = []; //stimulate null
+    let i1 = jsPsych.randomization.sampleWithoutReplacement(img, 3);
 
-
-
-    let a = [
-        [
-            {
-                stimulus: "img/C.bmp",
-                item: '坏人',
-                data: {
-                    test_part: 'test',
-                    correct_response: 'm'
-                }
-            },
-            {
-                stimulus: "img/C.bmp",
-                item: '好人',
-                data: {
-                    test_part: 'test',
-                    correct_response: 'n'
-                }
-            },
-            {
-                stimulus: "img/C.bmp",
-                item: '好人',
-                data: {
-                    test_part: 'test',
-                    correct_response: 'n'
-                }
-            },
-            {
-                stimulus: "img/C.bmp",
-                item: '常人',
-                data: {
-                    test_part: 'test',
-                    correct_response: 'n'
-                }
-            },
-            {
-                stimulus: "img/P.bmp",
-                item: '坏人',
-                data: {
-                    test_part: 'test',
-                    correct_response: 'n'
-                }
-            },
-            {
-                stimulus: "img/P.bmp",
-                item: '好人',
-                data: {
-                    test_part: 'test',
-                    correct_response: 'm'
-                }
-            },
-            {
-                stimulus: "img/P.bmp",
-                item: '好人',
-                data: {
-                    test_part: 'test',
-                    correct_response: 'm'
-                }
-            },
-            {
-                stimulus: "img/P.bmp",
-                item: '常人',
-                data: {
-                    test_part: 'test',
-                    correct_response: ''
-                }
-            },
-            {
-                stimulus: "img/Tra.bmp",
-                item: '坏人',
-                data: {
-                    test_part: 'test',
-                    correct_response: 'n'
-                }
-            },
-            {
-                stimulus: "img/Tra.bmp",
-                item: '好人',
-                data: {
-                    test_part: 'test',
-                    correct_response: 'n'
-                }
-            },
-            {
-                stimulus: "img/Tra.bmp",
-                item: '好人',
-                data: {
-                    test_part: 'test',
-                    correct_response: 'n'
-                }
-            },
-            {
-                stimulus: "img/Tra.bmp",
-                item: '常人',
-                data: {
-                    test_part: 'test',
-                    correct_response: 'm'
-                }
-            }
-        ],
-        [
-            {
-                stimulus: "img/C.bmp",
-                item: '坏人',
-                data: {
-                    test_part: 'test',
-                    correct_response: 'm'
-                }
-            },
-            {
-                stimulus: "img/C.bmp",
-                item: '好人',
-                data: {
-                    test_part: 'test',
-                    correct_response: 'n'
-                }
-            },
-            {
-                stimulus: "img/C.bmp",
-                item: '好人',
-                data: {
-                    test_part: 'test',
-                    correct_response: 'n'
-                }
-            },
-            {
-                stimulus: "img/C.bmp",
-                item: '常人',
-                data: {
-                    test_part: 'test',
-                    correct_response: 'n'
-                }
-            },
-            {
-                stimulus: "img/P.bmp",
-                item: '坏人',
-                data: {
-                    test_part: 'test',
-                    correct_response: 'n'
-                }
-            },
-            {
-                stimulus: "img/P.bmp",
-                item: '好人',
-                data: {
-                    test_part: 'test',
-                    correct_response: 'm'
-                }
-            },
-            {
-                stimulus: "img/P.bmp",
-                item: '好人',
-                data: {
-                    test_part: 'test',
-                    correct_response: 'm'
-                }
-            },
-            {
-                stimulus: "img/P.bmp",
-                item: '常人',
-                data: {
-                    test_part: 'test',
-                    correct_response: ''
-                }
-            },
-            {
-                stimulus: "img/Tra.bmp",
-                item: '坏人',
-                data: {
-                    test_part: 'test',
-                    correct_response: 'n'
-                }
-            },
-            {
-                stimulus: "img/Tra.bmp",
-                item: '好人',
-                data: {
-                    test_part: 'test',
-                    correct_response: 'n'
-                }
-            },
-            {
-                stimulus: "img/Tra.bmp",
-                item: '好人',
-                data: {
-                    test_part: 'test',
-                    correct_response: 'n'
-                }
-            },
-            {
-                stimulus: "img/Tra.bmp",
-                item: '常人',
-                data: {
-                    test_part: 'test',
-                    correct_response: 'm'
-                }
-            }
-        ],
-        [
-            {
-                stimulus: "img/C.bmp",
-                item: '坏人',
-                data: {
-                    test_part: 'test',
-                    correct_response: 'm'
-                }
-            },
-            {
-                stimulus: "img/C.bmp",
-                item: '好人',
-                data: {
-                    test_part: 'test',
-                    correct_response: 'n'
-                }
-            },
-            {
-                stimulus: "img/C.bmp",
-                item: '好人',
-                data: {
-                    test_part: 'test',
-                    correct_response: 'n'
-                }
-            },
-            {
-                stimulus: "img/C.bmp",
-                item: '常人',
-                data: {
-                    test_part: 'test',
-                    correct_response: 'n'
-                }
-            },
-            {
-                stimulus: "img/P.bmp",
-                item: '坏人',
-                data: {
-                    test_part: 'test',
-                    correct_response: 'n'
-                }
-            },
-            {
-                stimulus: "img/P.bmp",
-                item: '好人',
-                data: {
-                    test_part: 'test',
-                    correct_response: 'm'
-                }
-            },
-            {
-                stimulus: "img/P.bmp",
-                item: '好人',
-                data: {
-                    test_part: 'test',
-                    correct_response: 'm'
-                }
-            },
-            {
-                stimulus: "img/P.bmp",
-                item: '常人',
-                data: {
-                    test_part: 'test',
-                    correct_response: ''
-                }
-            },
-            {
-                stimulus: "img/Tra.bmp",
-                item: '坏人',
-                data: {
-                    test_part: 'test',
-                    correct_response: 'n'
-                }
-            },
-            {
-                stimulus: "img/Tra.bmp",
-                item: '好人',
-                data: {
-                    test_part: 'test',
-                    correct_response: 'n'
-                }
-            },
-            {
-                stimulus: "img/Tra.bmp",
-                item: '好人',
-                data: {
-                    test_part: 'test',
-                    correct_response: 'n'
-                }
-            },
-            {
-                stimulus: "img/Tra.bmp",
-                item: '常人',
-                data: {
-                    test_part: 'test',
-                    correct_response: 'm'
-                }
-            }
-        ],
-        [
-            {
-                stimulus: "img/C.bmp",
-                item: '坏人',
-                data: {
-                    test_part: 'test',
-                    correct_response: 'm'
-                }
-            },
-            {
-                stimulus: "img/C.bmp",
-                item: '好人',
-                data: {
-                    test_part: 'test',
-                    correct_response: 'n'
-                }
-            },
-            {
-                stimulus: "img/C.bmp",
-                item: '好人',
-                data: {
-                    test_part: 'test',
-                    correct_response: 'n'
-                }
-            },
-            {
-                stimulus: "img/C.bmp",
-                item: '常人',
-                data: {
-                    test_part: 'test',
-                    correct_response: 'n'
-                }
-            },
-            {
-                stimulus: "img/P.bmp",
-                item: '坏人',
-                data: {
-                    test_part: 'test',
-                    correct_response: 'n'
-                }
-            },
-            {
-                stimulus: "img/P.bmp",
-                item: '好人',
-                data: {
-                    test_part: 'test',
-                    correct_response: 'm'
-                }
-            },
-            {
-                stimulus: "img/P.bmp",
-                item: '好人',
-                data: {
-                    test_part: 'test',
-                    correct_response: 'm'
-                }
-            },
-            {
-                stimulus: "img/P.bmp",
-                item: '常人',
-                data: {
-                    test_part: 'test',
-                    correct_response: ''
-                }
-            },
-            {
-                stimulus: "img/Tra.bmp",
-                item: '坏人',
-                data: {
-                    test_part: 'test',
-                    correct_response: 'n'
-                }
-            },
-            {
-                stimulus: "img/Tra.bmp",
-                item: '好人',
-                data: {
-                    test_part: 'test',
-                    correct_response: 'n'
-                }
-            },
-            {
-                stimulus: "img/Tra.bmp",
-                item: '好人',
-                data: {
-                    test_part: 'test',
-                    correct_response: 'n'
-                }
-            },
-            {
-                stimulus: "img/Tra.bmp",
-                item: '常人',
-                data: {
-                    test_part: 'test',
-                    correct_response: 'm'
-                }
-            }
-        ],
-        [
-            {
-                stimulus: "img/C.bmp",
-                item: '坏人',
-                data: {
-                    test_part: 'test',
-                    correct_response: 'm'
-                }
-            },
-            {
-                stimulus: "img/C.bmp",
-                item: '好人',
-                data: {
-                    test_part: 'test',
-                    correct_response: 'n'
-                }
-            },
-            {
-                stimulus: "img/C.bmp",
-                item: '好人',
-                data: {
-                    test_part: 'test',
-                    correct_response: 'n'
-                }
-            },
-            {
-                stimulus: "img/C.bmp",
-                item: '常人',
-                data: {
-                    test_part: 'test',
-                    correct_response: 'n'
-                }
-            },
-            {
-                stimulus: "img/P.bmp",
-                item: '坏人',
-                data: {
-                    test_part: 'test',
-                    correct_response: 'n'
-                }
-            },
-            {
-                stimulus: "img/P.bmp",
-                item: '好人',
-                data: {
-                    test_part: 'test',
-                    correct_response: 'm'
-                }
-            },
-            {
-                stimulus: "img/P.bmp",
-                item: '好人',
-                data: {
-                    test_part: 'test',
-                    correct_response: 'm'
-                }
-            },
-            {
-                stimulus: "img/P.bmp",
-                item: '常人',
-                data: {
-                    test_part: 'test',
-                    correct_response: ''
-                }
-            },
-            {
-                stimulus: "img/Tra.bmp",
-                item: '坏人',
-                data: {
-                    test_part: 'test',
-                    correct_response: 'n'
-                }
-            },
-            {
-                stimulus: "img/Tra.bmp",
-                item: '好人',
-                data: {
-                    test_part: 'test',
-                    correct_response: 'n'
-                }
-            },
-            {
-                stimulus: "img/Tra.bmp",
-                item: '好人',
-                data: {
-                    test_part: 'test',
-                    correct_response: 'n'
-                }
-            },
-            {
-                stimulus: "img/Tra.bmp",
-                item: '常人',
-                data: {
-                    test_part: 'test',
-                    correct_response: 'm'
-                }
-            }
-        ],
-        [
-            {
-                stimulus: "img/C.bmp",
-                item: '坏人',
-                data: {
-                    test_part: 'test',
-                    correct_response: 'm'
-                }
-            },
-            {
-                stimulus: "img/C.bmp",
-                item: '好人',
-                data: {
-                    test_part: 'test',
-                    correct_response: 'n'
-                }
-            },
-            {
-                stimulus: "img/C.bmp",
-                item: '好人',
-                data: {
-                    test_part: 'test',
-                    correct_response: 'n'
-                }
-            },
-            {
-                stimulus: "img/C.bmp",
-                item: '常人',
-                data: {
-                    test_part: 'test',
-                    correct_response: 'n'
-                }
-            },
-            {
-                stimulus: "img/P.bmp",
-                item: '坏人',
-                data: {
-                    test_part: 'test',
-                    correct_response: 'n'
-                }
-            },
-            {
-                stimulus: "img/P.bmp",
-                item: '好人',
-                data: {
-                    test_part: 'test',
-                    correct_response: 'm'
-                }
-            },
-            {
-                stimulus: "img/P.bmp",
-                item: '好人',
-                data: {
-                    test_part: 'test',
-                    correct_response: 'm'
-                }
-            },
-            {
-                stimulus: "img/P.bmp",
-                item: '常人',
-                data: {
-                    test_part: 'test',
-                    correct_response: ''
-                }
-            },
-            {
-                stimulus: "img/Tra.bmp",
-                item: '坏人',
-                data: {
-                    test_part: 'test',
-                    correct_response: 'n'
-                }
-            },
-            {
-                stimulus: "img/Tra.bmp",
-                item: '好人',
-                data: {
-                    test_part: 'test',
-                    correct_response: 'n'
-                }
-            },
-            {
-                stimulus: "img/Tra.bmp",
-                item: '好人',
-                data: {
-                    test_part: 'test',
-                    correct_response: 'n'
-                }
-            },
-            {
-                stimulus: "img/Tra.bmp",
-                item: '常人',
-                data: {
-                    test_part: 'test',
-                    correct_response: 'm'
-                }
-            }
-        ]
-    ];
-
-
-
-
-
-
-
-    let test_stimuli = [
-        {
-            stimulus: "img/C.bmp",
-            item: '坏人',
-            data: {
-                test_part: 'test',
-                correct_response: 'm'
-            }
-        },
-        {
-            stimulus: "img/C.bmp",
-            item: '好人',
-            data: {
-                test_part: 'test',
-                correct_response: 'n'
-            }
-        },
-        {
-            stimulus: "img/C.bmp",
-            item: '好人',
-            data: {
-                test_part: 'test',
-                correct_response: 'n'
-            }
-        },
-        {
-            stimulus: "img/C.bmp",
-            item: '常人',
-            data: {
-                test_part: 'test',
-                correct_response: 'n'
-            }
-        },
-        {
-            stimulus: "img/P.bmp",
-            item: '坏人',
-            data: {
-                test_part: 'test',
-                correct_response: 'n'
-            }
-        },
-        {
-            stimulus: "img/P.bmp",
-            item: '好人',
-            data: {
-                test_part: 'test',
-                correct_response: 'm'
-            }
-        },
-        {
-            stimulus: "img/P.bmp",
-            item: '好人',
-            data: {
-                test_part: 'test',
-                correct_response: 'm'
-            }
-        },
-        {
-            stimulus: "img/P.bmp",
-            item: '常人',
-            data: {
-                test_part: 'test',
-                correct_response: ''
-            }
-        },
-        {
-            stimulus: "img/Tra.bmp",
-            item: '坏人',
-            data: {
-                test_part: 'test',
-                correct_response: 'n'
-            }
-        },
-        {
-            stimulus: "img/Tra.bmp",
-            item: '好人',
-            data: {
-                test_part: 'test',
-                correct_response: 'n'
-            }
-        },
-        {
-            stimulus: "img/Tra.bmp",
-            item: '好人',
-            data: {
-                test_part: 'test',
-                correct_response: 'n'
-            }
-        },
-        {
-            stimulus: "img/Tra.bmp",
-            item: '常人',
-            data: {
-                test_part: 'test',
-                correct_response: 'm'
-            }
+    b.push({
+        stimulus: i1[0],
+        item: word[0],
+        data: {
+            test_part: "test",
+            correct_response: "m"
         }
-    ];// 刺激集合
+    }, {
+        stimulus: i1[0],
+        item: word[0],
+        data: {
+            test_part: "test",
+            correct_response: "m"
+        }
+    }, {
+        stimulus: i1[1],
+        item: word[0],
+        data: {
+            test_part: "test",
+            correct_response: "n"
+        }
+    }, {
+        stimulus: i1[2],
+        item: word[0],
+        data: {
+            test_part: "test",
+            correct_response: "n"
+        }
+    });
+    b.push({
+        stimulus: i1[0],
+        item: word[1],
+        data: {
+            test_part: "test",
+            correct_response: "n"
+        }
+    }, {
+        stimulus: i1[1],
+        item: word[1],
+        data: {
+            test_part: "test",
+            correct_response: "m"
+        }
+    }, {
+        stimulus: i1[1],
+        item: word[1],
+        data: {
+            test_part: "test",
+            correct_response: "m"
+        }
+    }, {
+        stimulus: i1[2],
+        item: word[1],
+        data: {
+            test_part: "test",
+            correct_response: "n"
+        }
+    });
+    b.push({
+        stimulus: i1[0],
+        item: word[2],
+        data: {
+            test_part: "test",
+            correct_response: "n"
+        }
+    }, {
+        stimulus: i1[1],
+        item: word[2],
+        data: {
+            test_part: "test",
+            correct_response: "n"
+        }
+    }, {
+        stimulus: i1[2],
+        item: word[2],
+        data: {
+            test_part: "test",
+            correct_response: "m"
+        }
+    }, {
+        stimulus: i1[2],
+        item: word[2],
+        data: {
+            test_part: "test",
+            correct_response: "m"
+        }
+    });
+    console.log(b);
+    let test_stimuli = jsPsych.randomization.sampleWithoutReplacement(b, b.length);
 
     let timeline = [];
 
