@@ -70,6 +70,47 @@
     let img = ["C", "p", "Tra"];
     let word = ["好人", "坏人", "常人"];
 
+    let a = [];
+    let i1 = jsPsych.randomization.sampleWithoutReplacement(img, 3);
+    // let w1 = jsPsych.randomization.sampleWithoutReplacement(word, 3);
+    a.push({
+        stimulus: "img/" + i1.splice(Math.floor(Math.random() * i1.length), 1)[0] + ".bmp",
+        item: '坏人',
+        data: {
+            test_part: 'test',
+            correct_response: 'm'
+        }
+    },{
+        stimulus: "img/" + i1.splice(Math.floor(Math.random() * i1.length), 1)[0] + ".bmp",
+        item: '好人',
+        data: {
+            test_part: 'test',
+            correct_response: 'm'
+        }
+    },{
+        stimulus: "img/" + i1[0] + ".bmp",
+        item: '常人',
+        data: {
+            test_part: 'test',
+            correct_response: 'm'
+        }
+    },{
+        stimulus: "img/" + i1[0] + ".bmp",
+        item: '常人',
+        data: {
+            test_part: 'test',
+            correct_response: 'm'
+        }
+    });
+
+
+
+
+
+
+
+
+
     // 开头 欢迎界面
     let enterFullscreenMode = {
         type: "fullscreen",
