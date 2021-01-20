@@ -618,7 +618,7 @@
 
     let error1 = {
         type: "html-keyboard-response",
-        stimulus: "<p>错误次数过多，请按任意键重新进行实验～</p>",
+        stimulus: "<p style='color=white ;font-size = 25px'>错误次数过多，请按任意键重新进行实验～</p>",
         choices: jsPsych.ALL_KEYS
         // 判断是否错误过多
     };
@@ -865,12 +865,12 @@
             let accuracy = jsPsych.data.get().filter({correct: true, test_part: "test" + frequency}).count() / jsPsych.data.get().filter({test_part: "test" + frequency}).count();
             console.log(accuracy);
             frequency += 1;
-            if (accuracy <= 0.5 && frequency<=1) {
+            if (accuracy <= 0.6 && frequency<=1) {
                 return true;
-            } else if (accuracy >= 0.5 && frequency >=2) {
+            } else if (accuracy >= 0.6 && frequency >=2) {
                 jsPsych.pauseExperiment();
                 jsPsych.addNodeToEndOfTimeline({
-                    timeline: [feedback_all, rest, trial2]
+                    timeline: [feedback_all, rest, trial2, rest1, trial2, rest1, trial2]
                 }, jsPsych.resumeExperiment);
             } else {
                 jsPsych.pauseExperiment();
@@ -903,11 +903,29 @@
 
     let rest = {
         type: "html-keyboard-response",
-        stimulus: "<p style = 'color : white'>按任意键开始正式实验</p><div>",
+        stimulus: "<p style = 'color : white; font-size = 25px'>按任意键开始正式实验</p><div>",
         post_trial_gap:2000
 
     }; // 休息阶段
+    function timer() {
+  var second = document.getElementById("timer");
+  var button = document.getElementsByClassName("jspsych-btn")[0];
+  if(second.innerText > 1) {
+    second.innerText = second.innerText - 1;
+  } else {
+    button.innerText = "继续";
+    button.disabled = false;
+  }
+}
 
+var btn_timer_html = "<style onload='setInterval(timer, 1000)'></style><button class='jspsych-btn' style='font: normal 20px 等线' disabled=true>%choice%</button>";
+
+var rest1 = {
+  type: "html-button-response",
+  stimulus: "<p style = 'color :white; font-size:25px' >休息一下吧</p >",
+  choices: ["<span id='timer'>30</span>秒后可继续"],
+  button_html: btn_timer_html
+};
     let trial2 = {
         timeline: [plus1,feedback_trial],
         timeline_variables: test_stimuli,
