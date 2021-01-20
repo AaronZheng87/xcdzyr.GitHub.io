@@ -609,7 +609,9 @@
 
 
     // console.log(b);
-    let test_stimuli = jsPsych.randomization.sampleWithoutReplacement(b, b.length);
+    // sti 0-5
+    let k = Math.floor(Math.random() * 6);  // 分组 组别
+    let test_stimuli = jsPsych.randomization.sampleWithoutReplacement(sti[k], sti[k].length);
 
     let timeline = [];
 
@@ -768,9 +770,9 @@
     let instructions1 = {
         type: "html-keyboard-response",
         stimulus: "<p style= 'text-align: center; font-weight:700; font-size:25px; color : white'>请您记住如下联结:</p>" +
-            "<p style= 'text-align: center; font-weight:700; font-size:25px; color : white'>好人---五边形</p>" +
-            "<p style= 'text-align: center; font-weight:700; font-size:25px; color : white'>坏人---圆形</p>"+
-            "<p style= 'text-align: center; font-weight:700; font-size:25px; color : white'>常人---梯形</p>" +
+            "<p style= 'text-align: center; font-weight:700; font-size:25px; color : white'>" + sti[k][0] + "---" + sti[k][0] + "</p>" +
+            "<p style= 'text-align: center; font-weight:700; font-size:25px; color : white'>" + sti[k][1] + "---" + sti[k][1] + "</p>"+
+            "<p style= 'text-align: center; font-weight:700; font-size:25px; color : white'>" + sti[k][2] + "---" + sti[k][2] + "</p>" +
             "<p style= 'text-align: center; font-weight:700; font-size:25px; color : white'>您需要通过练习来学习这些对应关系；接下来，如果屏幕上出现的图形和文字符合上述关系，请按“M”键；如果图形与文字不符合上述的关系，请按“N”键。请您又快又准地进行反应</p>"+
             "<p style = 'color : lightgreen'>按任意键开始实验</p><div>",
         post_trial_gap: 2000
@@ -909,9 +911,9 @@
     let instructions2 = {
         type: "html-keyboard-response",
         stimulus: "<p>请您记住如下联结:</p>" +
-            "<p>好人---五边形</p>" +
-            "<p>坏人---圆形</p>"+
-            "<p>常人---梯形</p>" ,
+            "<p>" + sti[k][0] + "---" + sti[k][0] + "</p>" +
+            "<p>" + sti[k][1] + "---" + sti[k][1] + "</p>"+
+            "<p>" + sti[k][2] + "---" + sti[k][2] + "</p>" ,
         post_trial_gap: 2000
     };
 
