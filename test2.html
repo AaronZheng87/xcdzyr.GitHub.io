@@ -92,6 +92,14 @@
     let w1 = jsPsych.randomization.sampleWithoutReplacement(word, 3);
 
     let test_stimuli = [
+    {
+            stimulus: "img/C.bmp",
+            item: '坏人',
+            data: {
+                test_part: 'test',
+                correct_response: 'm'
+            }
+        },
         {
             stimulus: "img/C.bmp",
             item: '坏人',
@@ -134,10 +142,18 @@
         },
         {
             stimulus: "img/P.bmp",
-            item: '常人',
+            item: '好人',
             data: {
                 test_part: 'test',
                 correct_response: 'm'
+            }
+        },
+        {
+            stimulus: "img/P.bmp",
+            item: '常人',
+            data: {
+                test_part: 'test',
+                correct_response: 'n'
             }
         },
         {
@@ -154,6 +170,14 @@
             data: {
                 test_part: 'test',
                 correct_response: 'n'
+            }
+        },
+        {
+            stimulus: "img/Tra.bmp",
+            item: '常人',
+            data: {
+                test_part: 'test',
+                correct_response: 'm'
             }
         },
         {
