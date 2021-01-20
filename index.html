@@ -618,7 +618,7 @@
 
     let error1 = {
         type: "html-keyboard-response",
-        stimulus: "<p style='color=white ;font-size = 25px'>错误次数过多，请按任意键重新进行实验～</p>",
+        stimulus: "<p style='color:white ;font-size = 25px'>错误次数过多，请按任意键重新进行实验～</p>",
         choices: jsPsych.ALL_KEYS
         // 判断是否错误过多
     };
@@ -903,7 +903,7 @@
 
     let rest = {
         type: "html-keyboard-response",
-        stimulus: "<p style = 'color : white; font-size = 25px'>按任意键开始正式实验</p><div>",
+        stimulus: "<p style = 'color : white; font-size = 35px'>按任意键开始正式实验</p><div>",
         post_trial_gap:2000
 
     }; // 休息阶段
@@ -943,9 +943,9 @@ var rest1 = {
         timeline: timeline,
         preload_images: ["img/P.bmp", "img/C.bmp", "img/Tra.bmp"],
         on_finish: function () {
-            document.getElementById("jspsych-content").innerHTML = "<div><p style = 'color : white'>实验结束，非常感谢您的参与！</p >" +
-                "<p>如果您对实验结果感兴趣，可以发邮件与我联系。</p >" +
-                "<p>郑元瑞（Email: aaronzheng87@gmail.com） </p ></div>";
+            document.getElementById("jspsych-content").innerHTML = "<div><p style = 'color:white; font-size = 20px'>实验结束，非常感谢您的参与！</p >" +
+                "<p style = 'color:white; font-size = 20px'>如果您对实验结果感兴趣，可以发邮件与我联系。</p >" +
+                "<p style = 'color:white; font-size = 20px'>郑元瑞（Email: aaronzheng87@gmail.com） </p ></div>";
             jsPsych.data.get().localSave('csv', 'data.csv');
             document.exitFullscreen();
             let bodyNode = document.getElementsByTagName("body");
