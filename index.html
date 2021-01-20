@@ -924,7 +924,13 @@ var rest1 = {
   type: "html-button-response",
   stimulus: "<p style = 'color :white; font-size:25px' >休息一下吧</p >",
   choices: ["<span id='timer'>30</span>秒后可继续"],
-  button_html: btn_timer_html
+  button_html: btn_timer_html,
+    on_load: function () {
+        document.getElementsByTagName("body")[0].style.cursor = "default";
+    },
+    on_finish: function () {
+        document.getElementsByTagName("body")[0].style.cursor = "none";
+    }
 };
     let trial2 = {
         timeline: [plus1,feedback_trial],
